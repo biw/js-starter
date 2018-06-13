@@ -1,0 +1,44 @@
+{
+  "name": "js-starter",
+  "description": "A barebone repo that has all the files you need to start a new JS library or project",
+  "keywords": [
+    "starter kit",
+    "barebone"
+  ],
+  "repository": "https://github.com/biw/js-starter",
+  "version": "1.0.0",
+  "author": "ben@719ben.com",
+  "license": "MIT",
+  "main": "dist/js-starter.js",
+  "module": "dist/js-starter.es.js",
+  "umd:main": "dist/js-starter.umd.js",
+  "scripts": {
+    "raw-lint": "./node_modules/.bin/eslint .",
+    "raw-prettier": "./node_modules/.bin/prettier-eslint \"src/**/*.js\" \"__tests__/**/*.js\" --eslint-config-path \".eslintrc.json\"",
+    "lint": "yarn raw-prettier --write && yarn raw-lint",
+    "start": "./node_modules/.bin/babel-node src/index.js",
+    "test": "yarn jest",
+    "reinstall": "rm -rf node_modules && yarn cache clean && yarn",
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/node": "^7.0.0-beta.51",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "8.2.3",
+    "babel-jest": "^23.0.1",
+    "deep-freeze-strict": "^1.1.1",
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "jest": "^23.1.0",
+    "prettier-eslint-cli": "^4.7.1",
+    "rollup": "^0.60.4",
+    "rollup-plugin-babel": "^4.0.0-beta.2",
+    "rollup-plugin-uglify": "^4.0.0",
+    "uglify-js": "^3.3.13"
+  }
+}
